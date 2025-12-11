@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shadowborn Discount Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+			height: 150px;
+            padding: 20px 10px;
+            background: #0f3a46;
+            color: #fff;
+            text-align: center;
+        }
+
+        .header img {
+            width: 300px;   
+            height: 150px;
+            margin-bottom: 1px;
+        }
+
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            background: #333;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 12px;
+            background: #e8e8e8;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header with your uploaded logo -->
+<div class="header">
+    <img src="Ashit/Untitled_Project_-_Artboard_1-removebg-preview.png" alt="Shadowborn Printing Logo">
+</div>
+
+<div class="container">
+    <h2>Check Your Discount</h2>
+
+    <input type="text" id="coupon" placeholder="Enter your coupon code">
+
+    <button onclick="checkDiscount()">Check Discount</button>
+
+    <div id="output" class="result" style="display:none;"></div>
+</div>
+
+<script>
+    const coupons = {
+        "SB10": 10,
+        "SB20": 20,
+        "SB30": 30,
+        "NEWUSER": 15,
+        "MEGA50": 50
+    };
+
+    function checkDiscount() {
+        const code = document.getElementById("coupon").value.trim().toUpperCase();
+        const output = document.getElementById("output");
+
+        if (coupons[code]) {
+            output.style.display = "block";
+            output.innerHTML = "Your coupon gives " + coupons[code] + "% discount";
+        } else {
+            output.style.display = "block";
+            output.innerHTML = "Invalid coupon code";
+        }
+    }
+</script>
+
+</body>
+</html>
